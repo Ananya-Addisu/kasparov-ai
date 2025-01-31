@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="board.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/png" sizes="32x32">
+    <title>KasparovAI</title>
+</head>
+<body>
+ <header><center>KasparovAI</center></header>
+    <span class="everything">
+    <table>
+        <tr>
+            <td><br><br><br>
+                <br><br><br>
+                <div class="cardo">
+                    <div class="cardo2">
+                       <!-- <div class="info">-->
+                        
+                    &nbsp;&nbsp;Difficulty:
+                                    <select id="search-depth">
+                                        <option value="1" selected>1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+
+                                <br>
+                            <!--<span>&nbsp;&nbsp;Positions evaluated: <span id="position-count"></span></span>
+                                <br>
+                            <span>&nbsp;&nbsp;Time: <span id="time"></span></span>-->
+                                <br>
+                            <!--<span>&nbsp;&nbsp;Positions: <span id="positions-per-s"></span> </span>
+                                <br>-->
+                                    <br>
+                        </div>
+                    </div>
+                <!--</div>-->
+            </td>
+            <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td>
+            <td>
+                <br/><br/><br/><br/><br/>
+                <div id="board" class="board"></div>
+            </td>
+            <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td>
+            <td>
+                <br><br><br><br><br>
+                <!--<div id="move-history" class="move-history"></div>-->
+<div class="card">
+  <div class="move-history" id="move-history">
+  </div>
+  <a href="index.html"><button class="card-button"  action="index.html">Restart</button></a>
+</div>
+            </td>
+        </tr>
+    </table>
+</span>
+
+<script src="jquery.js"></script>
+<script src="rules.js"></script>
+<script src="validmoves.js"></script>
+<script src="ai.js"></script>
+<script>
+
+</script>
+    <footer>Made by Ananya Addisu.</footer>
+</body>
+</html>
