@@ -63,6 +63,47 @@ ananya-addisu-kasparov-ai/
 *   **`style.css`:** Provides the overall look and feel of the website, including colors, fonts, and responsiveness. it includes styles for the difficulty dropdown, the history card, and the social media buttons
 *   **Variants/KasparovAI - Tweak/:** Contains a slightly tweaked version with a different difficulty selection and UI compared to the base variation.
 
+## The AI Logic
+
+The AI in KasparovAI operates using the Minimax algorithm with alpha-beta pruning. Here's a step-by-step breakdown:
+
+1.  **Move Generation:** When it's the AI's turn, the `minimaxRoot` function is called. This function first gets all the legal moves available in the current game state using `game.ugly_moves()`.
+
+2.  **Iterative Minimax:** The `minimaxRoot` function iterates through each of these possible moves. For each move:
+    *   The move is temporarily made on a copy of the game using `game.ugly_move(newGameMove)`.
+    *   The `minimax` function is then recursively called to evaluate the resulting board state.
+    *   The move is undone using `game.undo()` to revert to the original state for the next move evaluation.
+    *   The result returned by `minimax` is compared, and the best resultant move is selected as `bestMoveFound`.
+    *   It then returns `bestMoveFound` to be moved by the AI.
+
+3.  **Recursive Minimax (`minimax` Function):**
+    *   **Base Case:** If the recursion reaches the specified `depth` (which corresponds to the bot's difficulty), the `evaluateBoard` function is called to score the board. Note: The algorithm returns the negative of the evaluation, to make this function act as what it should (maximize the value for the bot, therefore minimize the value for the human).
+    *   **Maximizing Player (AI):**
+        If the `isMaximisingPlayer` argument is true, the AI seeks to maximize its score.
+        *   It iterates through each possible move in the current game state using `game.ugly_moves()`.
+        *   For each, it makes the move, recursively calls `minimax` to go a level deeper, then undoes the move.
+        *   It continually tracks the maximum of all the returned evaluations as `bestMove`. Alpha is also used to to prune off useless branches as a side effect of tracking the max evaluation
+        *   If the beta threshold is lower than alpha, then we prune, since, from here down, we are guaranteed not to find a better evaluation than what the maxminising node already has.
+        *   The function returns `bestMove`, which for the maximizing layer represents the single best move that maximizes its evaluation.
+    *   **Minimizing Player (Opponent):**
+        If `isMaximisingPlayer` is false, it assumes that the AI's opponent (the human) will try to minimize the AI's score.
+        *   Similar structure as the maximizing player, except it tracks the `min` value and moves, representing what the next player's best move is (with respect to the AI's benefit)
+        *   Beta is used to prune nodes in a similar way as with the maximizing node.
+        *   The function returns `bestMove`, representing the single best move that minimizes the next person's evaluation.
+
+4. **Alpha-Beta Pruning**: During the `minimax` recursive calls, `alpha` and `beta` parameters are passed. The alpha-beta pruning logic is used to prune parts of the tree if it can be determined that they won't affect the result of the minimax, allowing the algorithm to drastically increase the speed at which it calculates the best move.
+
+5.  **Board Evaluation (`evaluateBoard` Function):**
+    *   This function assigns a numerical score to the current board position, by going through every square of the board.
+    *   It uses the `getPieceValue` function to score every piece, considering both the type of piece and its position.
+    *   The `pawnEvalWhite`, `knightEval`, `bishopEvalWhite`, `rookEvalWhite`, `evalQueen` and `kingEvalWhite` arrays are used to give positional advantage when scoring pieces (for example, a knight in the center being worth slightly more than on the side.) Similar evaluations are also used for black pieces to properly calculate evaluations if black is the one being evaluated.
+    *   The total evaluation is returned, representing how advantageous the board state is for white.
+    *   note that this is actually the negative of the evaluation that is returned, to cause `minimax` to perform correctly.
+
+6.  **Best Move Selection:** Once `minimaxRoot` has finished it returns the move corresponding to the optimal path, which will be performed by the AI.
+
+In essence, the AI explores the tree of possible moves, evaluating each path and selecting the one that it believes will lead to the best outcome for itself, and worst for it's opponent, within the specified search depth. The alpha-beta pruning helps in skipping the calculations that can be determined to be irrelevant, improving the calculation speed.
+
 ## Technology Stack
 
 *   **HTML:**  Structures the webpage and game interface.
