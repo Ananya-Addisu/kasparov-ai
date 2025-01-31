@@ -18,7 +18,7 @@ KasparovAI is a sophisticated chess AI, boasting a rating of approximately 3000 
 ## Project Structure
 
 The project is organized as follows:
-
+```markdown
 Directory structure:
 └── ananya-addisu-kasparov-ai/
     ├── README.md
@@ -52,7 +52,7 @@ Directory structure:
     └── img/
         └── chesspieces/
             └── wikipedia/
-
+```
 
 **Key Files and Functionalities:**
 
