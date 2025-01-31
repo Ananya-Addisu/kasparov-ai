@@ -19,39 +19,39 @@ KasparovAI is a sophisticated chess AI, boasting a rating of approximately 3000 
 
 The project is organized as follows:
 
-ananya-addisu-kasparov-ai/
-├── README.md          - This file.
-├── ai.js              - Contains the core AI logic, including the minimax algorithm.
-├── board.css          - Styles the chess board elements and layout.
-├── index.html         - The main HTML file for the chess game interface.
-├── jquery.js          - jQuery library file.
-├── rules.js           - Not used, likely a placeholder
-├── validmoves.js      - Contains helper functions for validating moves and creating the board.
-├── style.css          - Contains general styles for the page layout and other UI elements.
-├── img/               - Contains images for the chess pieces.
-│   └── chesspieces/
-│       └── wikipedia/
-│
-└── Variants/          - Contains the modified (or tweaked) version and also a mobile version
-    ├──  KasparovAI - Mobile.rar  - The mobile version in a RAR archive
-    ├── KasparovAI.userpref
-    ├── kaparovai.hepx
-    ├── KasparovAI - Mobile/
-    │   ├── index.html   - The index.html file for the mobile version
-    |   └── img
-    |       └── chesspieces
-    |           └── wikipedia
-    └── KasparovAI - Tweak/
-        ├── ai.js          - AI logic for the tweak version
-        ├── board.css      - board styles for the tweaked version
-        ├── index.html     - index.html file of the tweaked version
-        ├── jquery.js      - jquery library of the tweaked version
-        ├── rules.js        - not used
-        ├── style.css       - styles for the tweaked version
-        ├──  validmoves.js     - validates moves for the tweaked version
-        └── img/
-            └── chesspieces/
-                └── wikipedia/
+Directory structure:
+└── ananya-addisu-kasparov-ai/
+    ├── README.md
+    ├── ai.js
+    ├── board.css
+    ├── index.html
+    ├── jquery.js
+    ├── rules.js
+    ├── style.css
+    ├── validmoves.js
+    ├── Variants/
+    │   ├── KasparovAI - Mobile.rar
+    │   ├── KasparovAI.userpref
+    │   ├── kaparovai.hepx
+    │   ├── KasparovAI - Mobile/
+    │   │   ├── index.html
+    │   │   └── img/
+    │   │       └── chesspieces/
+    │   │           └── wikipedia/
+    │   └── KasparovAI - Tweak/
+    │       ├── ai.js
+    │       ├── board.css
+    │       ├── index.html
+    │       ├── jquery.js
+    │       ├── rules.js
+    │       ├── style.css
+    │       ├── validmoves.js
+    │       └── img/
+    │           └── chesspieces/
+    │               └── wikipedia/
+    └── img/
+        └── chesspieces/
+            └── wikipedia/
 
 
 **Key Files and Functionalities:**
