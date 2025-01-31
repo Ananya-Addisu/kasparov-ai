@@ -135,26 +135,3 @@ The project includes some variants:
 *   The AI's strength is controlled by the search depth parameter, which can be configured via the dropdown menu.
 *   The game utilizes the `chess.js` library (implicitly through `chessboard.js`) for handling the underlying chess logic.
 * The `rules.js` file is unused in this code, perhaps indicating a remnant from a previous iteration.
-
-## Author
-
-*   **Ananya Addisu**
-
-## Social Media
-Check out my other projects at:
-
-<div align="center">
-  <a href="https://intagram.com/aniwkn">
-    <img src="https://www.svgrepo.com/show/491664/instagram.svg" width="30" height="30" alt="Instagram">
-  </a>
-  <a href="https://twitter.com/an1nya">
-     <img src="https://www.svgrepo.com/show/491681/twitter.svg" width="30" height="30" alt="Twitter">
-  </a>
-  <a href="https://github.com/ananya-addisu">
-    <img src="https://www.svgrepo.com/show/491658/github.svg" width="30" height="30"  alt="Github">
-  </a>
-  <a href="https://discord.gg/">
-       <img src="https://www.svgrepo.com/show/491652/discord.svg" width="30" height="30" alt="Discord">
-  </a>
-</div>
-
